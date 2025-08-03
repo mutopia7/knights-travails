@@ -12,15 +12,17 @@ function getKnightMoves([x, y]) {
 
 
 function knightMoves(start, end) {
-  const queue = [];
+  const queue = []; // [currentPosition, [pathSoFar]]
   const visited = new Set();
 
   // Each queue element: [current position, path traveled so far]
   queue.push([start, [start]]);
   visited.add(start.toString());
+  let i = 1;
 
   while (queue.length > 0) {
     const [current, path] = queue.shift();
+    console.log(`in step ${i++} queue is`, queue); // for complete understanding how this works.
 
     // If we reach our destination, print the route and that's it.
     if (current[0] === end[0] && current[1] === end[1]) {
@@ -47,4 +49,5 @@ function knightMoves(start, end) {
 
 
 // Sample test
-knightMoves([0, 0], [7, 7]);
+knightMoves([2, 1], [4, 0]);
+
