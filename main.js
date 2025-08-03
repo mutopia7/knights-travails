@@ -44,3 +44,7 @@ function knightMoves(start, end) {
   // If the destination is not reached (which should not happen), return null.
   return null;
 }
+
+
+// Sample test
+knightMoves([0, 0], [7, 7]);
